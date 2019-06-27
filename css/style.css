@@ -1,0 +1,103 @@
+:root {
+  --colorPrimary: #171d4b;
+  --colorSecundary: #f4193e;
+  --colorbackground: #f7fbfe;
+  --colorbackgroundGrey: #fefefd;
+  --Shadow: 0px 7px 10px -5px #949494;
+}
+body {
+  font-family: 'Dosis', sans-serif;
+  margin: 0;
+  color: var(--colorPrimary);
+  background-color: var(--colorbackground);
+}
+header {
+  background-color: var(--colorbackgroundGrey);
+}
+.container-hero,
+nav {
+  max-width: 1024px;
+}
+.menu {
+  margin: 0 auto;
+  padding: 0.5em 1em;
+}
+.menu ul {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu ul li {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 2em;
+}
+.hero {
+  box-shadow: var(--Shadow);
+}
+.hero .container-hero {
+  margin: 0 auto;
+  padding: 2em;
+  display: flex;
+}
+.hero .container-hero h1 {
+  font-size: 5em;
+  margin-left: 1em;
+}
+.hero .container-hero figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: var(--colorSecundary);
+  height: 19em;
+  width: 24em;
+  position: relative;
+  bottom: -160px;
+}
+.hero .container-hero figure img {
+  padding: 2em;
+  text-align: center;
+}
+.services {
+  margin-top: 1em;
+}
+.services .contaier-services {
+  padding: 2em;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  grid-template-areas: 'service image-service';
+}
+.services .service {
+  grid-area: service;
+  background: var(--colorbackgroundGrey);
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border-radius: 5px;
+  box-shadow: var(--Shadow);
+  width: 25em;
+  height: auto;
+}
+.services .service:last-child {
+  margin-left: 10em;
+}
+.services .service h2 {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+.services .service p {
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+.services .service img {
+  margin-right: 1em;
+}
+.services .container-text-service {
+  display: inline-block;
+}
+.services .image-service {
+  margin-top: 15em;
+  grid-area: image-service;
+}
