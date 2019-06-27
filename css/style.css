@@ -62,7 +62,7 @@ nav {
   margin-top: 1em;
 }
 .services .contaier-services {
-  padding: 2em;
+  padding-top: 2em;
   max-width: 1024px;
   margin: 0 auto;
   display: grid;
@@ -98,6 +98,76 @@ nav {
   display: inline-block;
 }
 .services .image-service {
-  margin-top: 15em;
+  margin-top: 14em;
   grid-area: image-service;
+}
+.about-me .container-aboutme {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+.about-me h3 {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0 0 0.5em 0;
+}
+.about-me .container-text-about-me {
+  padding: 1em;
+  width: 30em;
+  box-shadow: var(--Shadow);
+  border-radius: 5px;
+}
+.about-me .container-text-about-me span {
+  font-weight: bold;
+}
+.projects .container-projects {
+  margin: 0 auto 3em auto;
+  max-width: 1024px;
+}
+.projects h4 {
+  text-align: center;
+  font-size: 4em;
+  margin-bottom: 0.5em;
+}
+.projects .projects {
+  display: flex;
+  justify-content: center;
+}
+.projects img {
+  width: 20em;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 5em;
+}
+footer {
+  height: 1.5em;
+  background-color: var(--colorSecundary);
+}
+aside {
+  background: var(--colorbackgroundGrey);
+  padding: 1em;
+  width: 70px;
+  box-shadow: var(--Shadow);
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+aside .logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15em;
+}
+aside .logo img {
+  width: 50px;
+  height: auto;
+}
+aside .social-icons {
+  margin-bottom: 5em;
+}
+aside .social-icons img {
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
 }
