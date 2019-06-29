@@ -199,6 +199,19 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+.aside .ocultar {
+  font-size: 0.8em;
+  font-weight: bold;
+  position: absolute;
+  bottom: -2.5em;
+  cursor: pointer;
+}
+.aside.active {
+  animation: side-left 1s forwards;
+}
+.aside.Inactive {
+  animation: side-right 1s forwards;
+}
 @media screen and (max-width: 768px) {
   :root {
     --maxWidth: 550px;
@@ -254,9 +267,6 @@ footer {
   .aside {
     left: -100px;
   }
-  .aside.active {
-    animation: side-left 1s forwards;
-  }
 }
 @media screen and (max-width: 320px) {
   .hero .container-hero h1 {
@@ -306,5 +316,37 @@ footer {
   }
   to {
     left: 0;
+  }
+}
+@-moz-keyframes side-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100px;
+  }
+}
+@-webkit-keyframes side-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100px;
+  }
+}
+@-o-keyframes side-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100px;
+  }
+}
+@keyframes side-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100px;
   }
 }
