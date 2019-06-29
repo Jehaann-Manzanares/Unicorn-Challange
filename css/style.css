@@ -5,6 +5,7 @@
   --colorbackgroundGrey: #fefefd;
   --Shadow: 0px 7px 20px -10px #949494;
   scroll-behavior: smooth;
+  --maxWidth: 800px;
   box-sizing: border-box;
 }
 body {
@@ -90,7 +91,6 @@ a {
   margin-bottom: 1.5em;
   border-radius: 5px;
   box-shadow: var(--Shadow);
-  width: 25em;
   height: auto;
 }
 .services .service:last-child {
@@ -132,63 +132,66 @@ a {
 }
 .about-me .container-text-about-me {
   padding: 1em;
-  width: 30em;
+  max-width: 30em;
   box-shadow: var(--Shadow);
   border-radius: 5px;
 }
 .about-me .container-text-about-me span {
   font-weight: bold;
 }
-.projects {
+.project {
   padding: 2em;
 }
-.projects .container-projects {
+.project .container-projects {
   margin: 0 auto 3em auto;
   max-width: var(--maxWidth);
 }
-.projects h4 {
+.project h4 {
   text-align: center;
   font-size: 4em;
-  margin-bottom: 0.5em;
+  margin: 0.5em 0;
 }
-.projects .projects {
+.project .projects {
   display: flex;
   justify-content: center;
 }
-.projects img {
+.project img {
   width: auto;
   height: 15em;
   border-radius: 5px;
 }
-.projects a:first-child {
+.project a:first-child {
   margin-right: 5em;
 }
 footer {
   height: 1.5em;
   background-color: var(--colorSecundary);
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
 }
-aside {
+.aside {
   background: var(--colorbackgroundGrey);
   padding: 1em;
   width: 50px;
   box-shadow: var(--Shadow);
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 2;
 }
-aside .logo {
+.aside .logo {
   display: flex;
   justify-content: center;
   margin-bottom: 15em;
 }
-aside .logo img {
+.aside .logo img {
   width: 50px;
   height: auto;
 }
-aside .social-icons {
+.aside .social-icons {
   margin-bottom: 5em;
 }
-aside .social-icons img {
+.aside .social-icons img {
   display: block;
   height: 25px;
   width: 25px;
@@ -197,6 +200,12 @@ aside .social-icons img {
   margin-right: auto;
 }
 @media screen and (max-width: 768px) {
+  :root {
+    --maxWidth: 550px;
+  }
+  .menu ul {
+    justify-content: center;
+  }
   .hero .container-hero {
     height: 10em;
     margin-bottom: 3em;
@@ -205,11 +214,97 @@ aside .social-icons img {
     font-size: 2.7em;
   }
   .hero .container-hero figure {
-    position: 100px;
+    height: 13em;
+    width: 25em;
+    bottom: -20px;
+  }
+  .container-service {
+    margin-top: 2.5em;
   }
 }
 @media screen and (max-width: 425px) {
-  .container-hero {
+  .hero .container-hero {
     height: 15em;
+    margin-bottom: 1em;
+    display: block;
+  }
+  .hero .container-hero h1 {
+    font-size: 2.7em;
+  }
+  .hero .container-hero figure {
+    height: 12em;
+    width: 15em;
+    right: -80px;
+  }
+  .services .service {
+    max-width: 20em;
+    height: auto;
+    margin-bottom: 1em;
+  }
+  .services .service:last-child {
+    margin-left: 1em;
+  }
+  .project .projects {
+    display: block;
+    text-align: center;
+  }
+  .project .projects a {
+    margin: 0;
+  }
+  .aside {
+    left: -100px;
+  }
+  .aside.active {
+    animation: side-left 1s forwards;
+  }
+}
+@media screen and (max-width: 320px) {
+  .hero .container-hero h1 {
+    font-size: 2.6em;
+    margin: 0;
+  }
+  .hero .container-hero figure {
+    right: 30px;
+  }
+  .container-service .service {
+    display: flex;
+  }
+  .container-service .service img {
+    height: 3em;
+  }
+}
+.titles {
+  font-size: 2em;
+}
+@-moz-keyframes side-left {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0;
+  }
+}
+@-webkit-keyframes side-left {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0;
+  }
+}
+@-o-keyframes side-left {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes side-left {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 0;
   }
 }
