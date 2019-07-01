@@ -1,0 +1,262 @@
+:root
+    --colorPrimary: #171D4B
+    --colorSecundary: #F4193E
+    --colorbackground: #F7FBFE
+    --colorbackgroundGrey:#FEFEFD
+    --Shadow: 0px 7px 20px -10px rgba(148,148,148,1)
+    scroll-behavior: smooth
+    --maxWidth: 800px
+    box-sizing: border-box
+
+
+body
+    font-family:'Dosis', sans-serif
+    margin: 0
+    color:var(--colorPrimary)
+    background-color: var(--colorbackground)
+
+
+header
+    background-color: var(--colorbackgroundGrey)
+
+.container-hero, .menu
+    max-width: var(--maxWidth)
+
+a
+    text-decoration: none
+    color:var(--colorPrimary)
+.menu
+    margin: 0 auto
+    padding: .5em 1em
+    & ul
+        display: flex
+        justify-content: flex-end
+        & li
+            display: inline-block
+            text-decoration: none
+            margin-right: 2em
+.hero
+    box-shadow:var(--Shadow)
+    & .container-hero
+        margin: 0 auto
+        padding: 2.5em
+        display: flex
+        height : 14em
+
+
+        & h1
+            font-size: 4em
+            margin: 0 0 0 1em
+
+        & figure
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 5px
+            background: var(--colorSecundary)
+            height : 17em
+            width: 25em
+            position: relative
+            bottom: -50px
+            & img
+                padding: 2em
+                text-align: center
+.services
+    margin-top: 1em
+
+    & .container-services
+        padding-top: 2em
+        max-width :var(--maxWidth)
+        padding: 2em
+        display: grid
+        grid-template-columns: 70% 30%
+        grid-template-areas: 'service image-service'
+        margin: 0 auto
+        @media screen and (max-width : 768px)
+            grid-template-columns: 1fr
+            grid-template-areas: 'service''image-service'
+
+    & .service
+            grid-area: service
+            background: var(--colorbackgroundGrey)
+            padding: 1em
+            margin-bottom: 1.5em
+            border-radius: 5px
+            box-shadow: var(--Shadow)
+            // max-width: 25em
+            height auto
+            &:last-child
+                margin-left: 10em
+
+            & h2
+                font-weight: bold
+                margin-bottom: .5em
+                margin-top: 0
+            & p
+                margin-bottom: .5em
+                margin-top: 0
+            & img
+                margin-right: 1em
+
+    & .container-text-service
+        display: inline-block
+    & .image-service
+        margin-top: 14em
+        grid-area: image-service
+        @media screen and (max-width : 768px)
+            margin: 4em 5em 0 auto
+
+
+.about-me
+
+    & .container-aboutme
+        margin: 0 auto
+        padding: 2em
+        max-width : var(--maxWidth)
+    & h3
+        font-size: 4em
+        font-weight: bold
+        margin: 0 0 .5em 0
+    & .container-text-about-me
+        padding: 1em
+        max-width: 30em
+        box-shadow: var(--Shadow)
+        border-radius: 5px
+        & span
+            font-weight:bold
+.project
+    padding: 2em
+    & .container-projects
+        margin: 0 auto 3em auto
+        max-width : var(--maxWidth)
+    & h4
+        text-align: center
+        font-size: 4em
+        margin: .5em 0
+    & .projects
+        display flex
+        justify-content: center
+    & img
+        width: auto
+        height: 15em
+        border-radius: 5px
+    & a:first-child
+            margin-right: 5em
+footer
+    height 1.5em
+    background-color: var(--colorSecundary)
+    color white
+    text-align: center
+    font-weight: bold
+
+.aside
+    background: var(--colorbackgroundGrey)
+    padding: 1em
+    width: 50px
+    box-shadow: var(--Shadow)
+    position: fixed
+    top: 0
+    z-index 2
+
+    & .logo
+        display: flex
+        justify-content: center
+        margin-bottom: 15em
+        & img
+            width: 50px
+            height auto
+
+    & .social-icons
+        margin-bottom: 5em
+        & img
+            display: block
+            height 25px
+            width: 25px
+            margin-bottom: 2em
+            margin-left: auto
+            margin-right: auto
+    & .ocultar
+        font-size: .8em
+        font-weight: bold
+        position: absolute
+        bottom :-2.5em
+        cursor pointer
+    &.active
+            animation side-left 1s forwards
+    &.Inactive
+            animation side-right 1s forwards
+
+
+@media screen and (max-width: 768px)
+    :root
+        --maxWidth: 550px;
+    .menu ul
+        justify-content: center;
+
+    .hero .container-hero
+        height 10em
+        margin-bottom: 3em
+        & h1
+            font-size: 2.7em
+        & figure
+            height: 13em;
+            width: 25em;
+            bottom: -20px
+    .container-service
+        margin-top: 2.5em
+
+@media screen and (max-width: 425px)
+
+    .hero .container-hero
+        height 15em
+        margin-bottom: 1em
+        display: block
+        & h1
+            font-size: 2.7em
+        & figure
+            height: 12em;
+            width: 15em;
+            right: -80px
+    .services .service
+        max-width: 20em
+        height auto
+        margin-bottom: 1em;
+        &:last-child
+            margin-left: 1em
+    .project
+        & .projects
+            display: block
+            text-align: center
+            & a
+                margin: 0
+    .aside
+        left :-100px
+
+
+@media screen and (max-width: 320px)
+    .hero .container-hero
+        & h1
+            font-size: 2.6em
+            margin: 0
+        & figure
+            right: 30px
+    .container-service .service
+        display: flex
+        & img
+            height 3em
+.titles
+        font-size: 2em
+
+
+
+@keyframes side-left
+    from
+        left:-100px
+    to
+        left:0
+
+@keyframes side-right
+    from
+        left:0
+    to
+        left:-100px
